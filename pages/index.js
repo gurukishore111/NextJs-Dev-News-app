@@ -11,20 +11,8 @@ export default function Home({ article }) {
 }
 
 
-export const getStaticProps = async () => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
-  const article = await res.json();
-
-
-  return {
-    props: {
-      article
-    }
-  }
-}
-
 // export const getStaticProps = async () => {
-//   const res = await fetch(`${server}/api/article/`)
+//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
 //   const article = await res.json();
 
 
@@ -34,3 +22,15 @@ export const getStaticProps = async () => {
 //     }
 //   }
 // }
+
+export const getStaticProps = async () => {
+  const res = await fetch(`${server}/api/article/`)
+  const article = await res.json();
+
+
+  return {
+    props: {
+      article
+    }
+  }
+}
